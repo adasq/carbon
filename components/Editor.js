@@ -106,6 +106,13 @@ class Editor extends React.Component {
 
     this.setState(newState)
 
+    window.api = {
+      save: () => this.save({ format: 'png' }),
+      updateCode: this.updateCode,
+      updateLanguage: this.updateLanguage,
+      getCarbonImage: this.getCarbonImage
+    }      
+
     window.addEventListener('offline', this.setOffline)
     window.addEventListener('online', this.setOnline)
   }
